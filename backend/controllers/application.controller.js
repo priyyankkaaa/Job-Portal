@@ -21,7 +21,7 @@ export const applyJob = async (req, res) => {
             });
         }
 
-        // check if the jobs exists
+        // check if the jobs exists 
         const job = await Job.findById(jobId);
         if (!job) {
             return res.status(404).json({
@@ -89,7 +89,7 @@ export const getApplicants = async (req,res) => {
         };
         return res.status(200).json({
             job, 
-            succees:true
+            succees:true 
         });
     } catch (error) {
         console.log(error);
@@ -102,11 +102,11 @@ export const updateStatus = async (req,res) => {
         if(!status){
             return res.status(400).json({
                 message:'status is required',
-                success:false
+                success:false 
             })
         };
 
-        // find the application by applicantion id
+        // find the application by application id
         const application = await Application.findOne({_id:applicationId});
         if(!application){
             return res.status(404).json({

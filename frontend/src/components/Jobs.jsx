@@ -18,7 +18,6 @@ const Jobs = () => {
                 job.company?.name?.toLowerCase().includes(searchedQuery.toLowerCase())
             );
             });
-           console.log("FILTERED =", filteredJobs);
             setFilterJobs(filteredJobs)
         } else {
             setFilterJobs(allJobs)

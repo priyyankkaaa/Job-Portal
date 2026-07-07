@@ -55,7 +55,7 @@ export const getCompanyById = async (req, res) => {
     try {
         const companyId = req.params.id;
         const company = await Company.findById(companyId);
-        if (!company) {
+        if (!company) {     
             return res.status(404).json({
                 message: "Company not found.",
                 success: false
@@ -74,7 +74,7 @@ export const updateCompany = async (req, res) => {
         const { name, description, website, location } = req.body;
  
         const file = req.file;
-        // idhar cloudinary ayega
+
         
         const fileUri = getDataUri(file);
         const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
