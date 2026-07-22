@@ -148,6 +148,7 @@ export const updateProfile = async (req, res) => {
         if (file) {
             const fileUri = getDataUri(file);
             cloudResponse = await cloudinary.uploader.upload(fileUri.content);
+            
         }
 
         let skillsArray;
